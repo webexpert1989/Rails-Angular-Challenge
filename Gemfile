@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 gem 'rails', '4.2.2'
-gem 'sass-rails', '~> 5.0'
+gem 'sprockets-rails', '~> 2.3.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 group :development, :test do
   gem 'byebug'
@@ -15,6 +14,10 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pg'
+gem 'versionist' # provides nice API versioning and controller handling and pathing.
+gem 'pundit'
+gem 'active_model_serializers'
+
 group :development do
   gem 'better_errors'
   gem 'foreman'
@@ -38,4 +41,11 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+end
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular', '~> 1.4.0'
+  gem 'rails-assets-lodash'
+  gem 'rails-assets-restangular'
+  gem 'rails-assets-angular-ui-router', '0.2.13'
 end

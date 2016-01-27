@@ -1,0 +1,77 @@
+<h2>Failed Charges</h2>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>User</td>
+        <td>Paid</td>
+        <td>Amount</td>
+        <td>Refunded</td>
+        <td>Disputed</td>
+        <td>Created At</td>
+      </tr>
+    </thead>
+    <tr ng-repeat="charge in charges | filter: {paid: false}">
+      <td><a ui-sref="charges.show({id: charge.id})">{{charge.id}}</a></td>
+      <td>{{charge.user.full_name}}</td>
+      <td>{{charge.paid}}</td>
+      <td>{{charge.amount | currency}}</td>
+      <td>{{charge.refunded}}</td>
+      <td>{{charge.disputed}}</td>
+      <td>{{charge.created_at | date: 'medium'}}</td>
+    </tr>
+  </table>
+</div>
+
+<h2>Disputed Charges</h2>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>User</td>
+        <td>Paid</td>
+        <td>Amount</td>
+        <td>Refunded</td>
+        <td>Disputed</td>
+        <td>Created At</td>
+      </tr>
+    </thead>
+    <tr ng-repeat="charge in charges | filter: {disputed: true}">
+      <td><a ui-sref="charges.show({id: charge.id})">{{charge.id}}</a></td>
+      <td>{{charge.user.full_name}}</td>
+      <td>{{charge.paid}}</td>
+      <td>{{charge.amount | currency}}</td>
+      <td>{{charge.refunded}}</td>
+      <td>{{charge.disputed}}</td>
+      <td>{{charge.created_at | date: 'medium'}}</td>
+    </tr>
+  </table>
+</div>
+
+<h2>Successful Charges</h2>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>User</td>
+        <td>Paid</td>
+        <td>Amount</td>
+        <td>Refunded</td>
+        <td>Disputed</td>
+        <td>Created At</td>
+      </tr>
+    </thead>
+    <tr ng-repeat="charge in charges | filter: {paid: true, disputed: false}">
+      <td><a ui-sref="charges.show({id: charge.id})">{{charge.id}}</a></td>
+      <td>{{charge.user.full_name}}</td>
+      <td>{{charge.paid}}</td>
+      <td>{{charge.amount | currency}}</td>
+      <td>{{charge.refunded}}</td>
+      <td>{{charge.disputed}}</td>
+      <td>{{charge.created_at | date: 'medium'}}</td>
+    </tr>
+  </table>
+</div>
