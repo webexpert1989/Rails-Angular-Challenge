@@ -15,7 +15,8 @@ customer1 = User.create({
   last_name: 'Ocean',
   email: 'billy@test.com',
   password: 'test1234',
-  password_confirmation: 'test1234'
+  password_confirmation: 'test1234',
+  role: true
 })
 puts "#{customer1.first_name} was created"
 
@@ -24,7 +25,8 @@ customer2 = User.create({
   last_name: 'Hughes',
   email: 'chrish@test.com',
   password: 'test1234',
-  password_confirmation: 'test1234'
+  password_confirmation: 'test1234',
+  role: false
 })
 puts "#{customer2.first_name} was created"
 
@@ -33,7 +35,8 @@ customer3 = User.create({
   last_name: 'Walsh',
   email: 'hector@test.com',
   password: 'test1234',
-  password_confirmation: 'test1234'
+  password_confirmation: 'test1234',
+  role: false
 })
 puts "#{customer3.first_name} was created"
 
@@ -42,7 +45,8 @@ customer4 = User.create({
   last_name: 'Smith',
   email: 'ryan@test.com',
   password: 'test1234',
-  password_confirmation: 'test1234'
+  password_confirmation: 'test1234',
+  role: false
 })
 puts "#{customer4.first_name} was created"
 
