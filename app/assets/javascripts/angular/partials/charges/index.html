@@ -12,7 +12,7 @@
         <td>Created At</td>
       </tr>
     </thead>
-    <tr ng-repeat="charge in charges | filter: {paid: false}">
+    <tr ng-repeat="charge in charges | filter: {paid: false}" class="failed">
       <td><a ui-sref="charges.show({id: charge.id})">{{charge.id}}</a></td>
       <td>{{charge.user.full_name}}</td>
       <td>{{charge.paid}}</td>
@@ -38,7 +38,7 @@
         <td>Created At</td>
       </tr>
     </thead>
-    <tr ng-repeat="charge in charges | filter: {disputed: true}">
+    <tr ng-repeat="charge in charges | filter: {disputed: true}" class="disputing-list">
       <td><a ui-sref="charges.show({id: charge.id})">{{charge.id}}</a></td>
       <td>{{charge.user.full_name}}</td>
       <td>{{charge.paid}}</td>
@@ -64,7 +64,7 @@
         <td>Created At</td>
       </tr>
     </thead>
-    <tr ng-repeat="charge in charges | filter: {paid: true, disputed: false}">
+    <tr ng-repeat="charge in charges | filter: {paid: true, disputed: false}" class="success">
       <td><a ui-sref="charges.show({id: charge.id})">{{charge.id}}</a></td>
       <td>{{charge.user.full_name}}</td>
       <td>{{charge.paid}}</td>
